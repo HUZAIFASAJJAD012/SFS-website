@@ -80,7 +80,7 @@ const caseStudies = [
       author: "Lisa van der Berg",
       position: "Founder, DirectSales B.V."
     },
-    image: "/case-directsales.jpg"
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&auto=format&q=80"
   },
   {
     id: 2,
@@ -614,8 +614,15 @@ export default function CasesPage() {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Header */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-400 to-indigo-600">
-                  <div className="absolute inset-0 bg-black/20"></div>
+                <div className="relative h-48 bg-gradient-to-br from-blue-400 to-indigo-600 overflow-hidden">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-30"
+                    style={{
+                      backgroundImage: `url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&auto=format&q=80')`
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
                   <div className="relative h-full p-6 flex flex-col justify-between">
                     <div className="flex items-start justify-between">
                       <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
