@@ -9,6 +9,18 @@ export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const shouldReduceMotion = useReducedMotion()
   
+  // Predefined positions for particles to avoid hydration issues
+  const particlePositions = useMemo(() => [
+    { left: 15, top: 20 },
+    { left: 85, top: 15 },
+    { left: 70, top: 80 },
+    { left: 25, top: 60 },
+    { left: 90, top: 45 },
+    { left: 10, top: 85 },
+    { left: 60, top: 25 },
+    { left: 45, top: 70 }
+  ], [])
+  
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
@@ -99,13 +111,13 @@ export function HeroSection() {
         {/* Simplified particles - reduced from 20 to 8 */}
         {!shouldReduceMotion && (
           <div className="absolute inset-0 overflow-hidden">
-            {[...Array(8)].map((_, i) => (
+            {particlePositions.map((position, i) => (
               <motion.div
                 key={i}
                 className="absolute w-2 h-2 bg-blue-400/20 dark:bg-blue-600/20 rounded-full"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  left: `${position.left}%`,
+                  top: `${position.top}%`,
                   willChange: 'transform'
                 }}
                 animate={{
@@ -113,7 +125,7 @@ export function HeroSection() {
                   opacity: [0, 0.8, 0],
                 }}
                 transition={{
-                  duration: 8 + Math.random() * 4, // Slower
+                  duration: 8 + (i % 3) * 2, // Deterministic duration based on index
                   repeat: Infinity,
                   delay: i * 0.5,
                   ease: "easeInOut"
