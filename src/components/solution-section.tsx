@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
-import { Building2, Globe, Users, CheckCircle, ArrowRight, Zap, Target } from 'lucide-react'
+import { Building2, Globe, CheckCircle, ArrowRight, Zap, Target } from 'lucide-react'
 import { useRef, useMemo } from 'react'
 
 const offices = [
@@ -131,7 +131,7 @@ export function SolutionSection() {
             viewport={{ once: true }}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            We help you translate the success you've achieved into new markets without getting distracted by paperwork, tax codes and language barriers.
+            We help you translate the success you&apos;ve achieved into new markets without getting distracted by paperwork, tax codes and language barriers.
           </motion.p>
         </motion.div>
 

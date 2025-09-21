@@ -207,7 +207,7 @@ export default function ServicesPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 variants={fadeInScale}
@@ -362,7 +362,7 @@ export default function ServicesPage() {
               { name: 'Twinfield', subtitle: 'Professional accounting software', color: 'from-green-500 to-green-600', icon: '💼' },
               { name: 'AFAS', subtitle: 'Complete business solution', color: 'from-purple-500 to-purple-600', icon: '⚡' },
               { name: 'Custom APIs', subtitle: 'Tailored integrations', color: 'from-orange-500 to-orange-600', icon: '🔧' }
-            ].map((erp, index) => (
+            ].map((erp) => (
               <motion.div
                 key={erp.name}
                 variants={fadeInScale}

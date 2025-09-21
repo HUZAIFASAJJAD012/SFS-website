@@ -3,8 +3,28 @@
 import { motion } from 'framer-motion'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
-import { Linkedin, Mail, MapPin, Calendar, Award, Users, TrendingUp, Calculator, FileText, Database, ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Calendar, Award, Users, TrendingUp, Calculator, FileText, Database, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+
+interface TeamMember {
+  id: number;
+  name: string;
+  position: string;
+  department: string;
+  bio: string;
+  experience: string;
+  projects: string;
+  specialties: string[];
+  education: string;
+  location: string;
+  joinDate: string;
+  image: string;
+  social: {
+    linkedin: string;
+    email: string;
+  };
+  achievements: string[];
+}
 
 const teamMembers = [
   {
@@ -115,7 +135,7 @@ const services = [
 ]
 
 export default function TeamPage() {
-  const [selectedMember, setSelectedMember] = useState<any>(null)
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
 
   // Enhanced scroll animation variants
   const fadeInUp = {
@@ -145,12 +165,6 @@ export default function TeamPage() {
     transition: { duration: 1, ease: "easeOut" }
   }
 
-  const slideInRight = {
-    initial: { opacity: 0, x: 100 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 1, ease: "easeOut" }
-  }
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Navigation />
@@ -175,7 +189,7 @@ export default function TeamPage() {
               className="text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
               Meet the talented Dutch tax and bookkeeping professionals who ensure your business 
-              stays compliant and financially optimized, wherever you're located globally.
+              stays compliant and financially optimized, wherever you&apos;re located globally.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -208,7 +222,7 @@ export default function TeamPage() {
             variants={staggerContainer}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
-            {companyStats.map((stat, index) => (
+            {companyStats.map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={fadeInUp}
@@ -255,7 +269,7 @@ export default function TeamPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 variants={fadeInUp}
@@ -341,7 +355,7 @@ export default function TeamPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {teamMembers.map((member: any, index: number) => (
+            {teamMembers.map((member: TeamMember) => (
               <motion.div
                 key={member.id}
                 layout

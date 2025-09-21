@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { 
   Store, TrendingUp, FileText, Users, Globe, 
-  DollarSign, AlertTriangle, Languages, Building2,
+  AlertTriangle, Languages, Building2,
   ArrowRight, CheckCircle
 } from 'lucide-react'
 
@@ -305,7 +305,7 @@ export function ChallengesSection() {
                 Common International Expansion Challenges
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Here's what typically happens when businesses expand to new markets:
+                Here&apos;s what typically happens when businesses expand to new markets:
               </p>
             </motion.div>
 
@@ -529,7 +529,7 @@ export function ChallengesSection() {
                   }}
                   viewport={{ once: true }}
                 >
-                  Don't let these challenges slow down your international expansion. 
+                  Don&apos;t let these challenges slow down your international expansion. 
                   SFS provides comprehensive Dutch bookkeeping and tax advisory services 
                   that eliminate these pain points from day one.
                 </motion.p>

@@ -1,14 +1,50 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { 
   TrendingUp, Users, DollarSign, Clock, Globe, CheckCircle, 
-  Building2, Zap, Target, BarChart3, FileText, Database,
-  ArrowRight, Star, Award, Calendar, MapPin, ExternalLink, Shield
+  Building2, Zap, Target, FileText, Database,
+  ArrowRight, Star, Award, Calendar, MapPin, ExternalLink, Shield,
+  type LucideIcon
 } from 'lucide-react'
 import { useState } from 'react'
+
+interface Metric {
+  label: string;
+  value: string;
+  icon: LucideIcon;
+}
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  position: string;
+}
+
+interface CaseStudy {
+  id: number;
+  title: string;
+  client: string;
+  industry: string;
+  location: string;
+  timeline: string;
+  featured: boolean;
+  challenge: string;
+  solution: string[];
+  results: {
+    savings: string;
+    efficiency: string;
+    compliance: string;
+    growth: string;
+  };
+  metrics: Metric[];
+  technologies: string[];
+  testimonial: Testimonial;
+  image: string;
+}
 
 const caseStudies = [
   {
@@ -231,7 +267,7 @@ const statsOverview = [
 ]
 
 export default function CasesPage() {
-  const [selectedCase, setSelectedCase] = useState<any>(null)
+  const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null)
 
   // Animation variants with enhanced scroll effects
   const fadeInUp = {
@@ -433,7 +469,7 @@ export default function CasesPage() {
             variants={staggerContainer}
             className="space-y-8"
           >
-            {caseStudies.filter((c: any) => c.featured).map((caseStudy: any, index: number) => (
+            {caseStudies.filter((c: CaseStudy) => c.featured).map((caseStudy: CaseStudy) => (
               <motion.div
                 key={caseStudy.id}
                 layout
@@ -495,12 +531,12 @@ export default function CasesPage() {
                         Client Testimonial
                       </h4>
                       <blockquote className="text-gray-600 dark:text-gray-300 italic mb-4">
-                        "{caseStudy.testimonial.quote}"
+                        &ldquo;{caseStudy.testimonial.quote}&rdquo;
                       </blockquote>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-3">
                           <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm">
-                            {caseStudy.testimonial.author.split(' ').map(n => n[0]).join('')}
+                            {caseStudy.testimonial.author.split(' ').map((n: string) => n[0]).join('')}
                           </span>
                         </div>
                         <div>
@@ -562,7 +598,7 @@ export default function CasesPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {caseStudies.map((caseStudy: any, index: number) => (
+            {caseStudies.map((caseStudy: CaseStudy) => (
               <motion.div
                 key={caseStudy.id}
                 layout
@@ -757,7 +793,7 @@ export default function CasesPage() {
                   Results Achieved
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {selectedCase.metrics.map((metric: any, index: number) => (
+                  {selectedCase.metrics.map((metric: Metric, index: number) => (
                     <div key={index} className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                       <metric.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
                       <div className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-1">
@@ -794,7 +830,7 @@ export default function CasesPage() {
                   Client Testimonial
                 </h3>
                 <blockquote className="text-gray-600 dark:text-gray-300 italic mb-4 text-lg leading-relaxed">
-                  "{selectedCase.testimonial.quote}"
+                  &ldquo;{selectedCase.testimonial.quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-800 rounded-full flex items-center justify-center mr-4">

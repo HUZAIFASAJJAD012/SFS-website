@@ -246,9 +246,9 @@ export function AboutSection() {
               className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 p-6 rounded-2xl border border-blue-200 dark:border-blue-800"
             >
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">
-                "At SFS, we combine deep expertise in Dutch financial regulations with cutting-edge technology 
+                &ldquo;At SFS, we combine deep expertise in Dutch financial regulations with cutting-edge technology 
                 to deliver seamless, accurate, and compliant solutions. Our commitment to excellence ensures 
-                your business can focus on growth while we handle the complexities of financial management."
+                your business can focus on growth while we handle the complexities of financial management.&rdquo;
               </p>
             </motion.div>
           </motion.div>

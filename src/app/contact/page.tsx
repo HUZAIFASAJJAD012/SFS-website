@@ -5,8 +5,8 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { 
   Phone, Mail, MapPin, Clock, Calendar, Send, MessageSquare, 
-  Globe, CheckCircle, Users, FileText, Calculator, Database,
-  HeadphonesIcon, Video, Zap, Shield, ArrowRight
+  Globe, Users, FileText, Calculator, Database,
+  Video, Shield, ArrowRight
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -158,7 +158,7 @@ export default function ContactPage() {
               variants={fadeInUp}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Let's discuss how SFS can help your Dutch business with expert bookkeeping and tax advisory services—wherever you're located globally.
+              Let&apos;s discuss how SFS can help your Dutch business with expert bookkeeping and tax advisory services&mdash;wherever you&apos;re located globally.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -206,7 +206,7 @@ export default function ContactPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            {contactMethods.map((method, index) => (
+            {contactMethods.map((method) => (
               <motion.div
                 key={method.title}
                 variants={fadeInUp}
@@ -383,7 +383,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {offices.map((office, index) => (
+              {offices.map((office) => (
                 <motion.div
                   key={office.city}
                   variants={fadeInUp}
@@ -463,7 +463,7 @@ export default function ContactPage() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 variants={fadeInUp}
