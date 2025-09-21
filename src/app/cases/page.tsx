@@ -115,7 +115,7 @@ const caseStudies = [
       author: "Mark Janssen",
       position: "Owner, Creative Studios B.V."
     },
-    image: "/case-creative.jpg"
+    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=200&fit=crop&auto=format&q=80"
   },
   {
     id: 3,
@@ -150,7 +150,7 @@ const caseStudies = [
       author: "Peter van Dijk",
       position: "Owner, Local Flavors Group"
     },
-    image: "/case-flavors.jpg"
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop&auto=format&q=80"
   },
   {
     id: 4,
@@ -185,7 +185,7 @@ const caseStudies = [
       author: "Emma Bakker",
       position: "CFO, InnovateNL B.V."
     },
-    image: "/case-innovate.jpg"
+    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=200&fit=crop&auto=format&q=80"
   },
   {
     id: 5,
@@ -220,7 +220,7 @@ const caseStudies = [
       author: "David Hendriks",
       position: "Managing Director, Global Trade Partners B.V."
     },
-    image: "/case-global.jpg"
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=200&fit=crop&auto=format&q=80"
   },
   {
     id: 6,
@@ -255,7 +255,7 @@ const caseStudies = [
       author: "Sophie de Vries",
       position: "Partner, Consultancy Pro B.V."
     },
-    image: "/case-consultancy.jpg"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop&auto=format&q=80"
   }
 ]
 
@@ -526,7 +526,13 @@ export default function CasesPage() {
                   </div>
 
                   <div className="space-y-6">
+                    {/* Case Study Image */}
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
+                      <img 
+                        src={caseStudy.image} 
+                        alt={caseStudy.title}
+                        className="w-full h-48 object-cover rounded-lg mb-4"
+                      />
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
                         Client Testimonial
                       </h4>
@@ -619,7 +625,7 @@ export default function CasesPage() {
                   <div 
                     className="absolute inset-0 bg-cover bg-center opacity-30"
                     style={{
-                      backgroundImage: `url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&auto=format&q=80')`
+                      backgroundImage: `url('${caseStudy.image}')`
                     }}
                   />
                   <div className="absolute inset-0 bg-black/40"></div>
@@ -751,7 +757,7 @@ export default function CasesPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between mb-6">
-              <div>
+              <div className="flex-1">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                   {selectedCase.title}
                 </h2>
@@ -762,10 +768,19 @@ export default function CasesPage() {
               </div>
               <button
                 onClick={() => setSelectedCase(null)}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-2xl"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-2xl ml-4"
               >
                 ×
               </button>
+            </div>
+
+            {/* Case Study Image */}
+            <div className="mb-8">
+              <img 
+                src={selectedCase.image} 
+                alt={selectedCase.title}
+                className="w-full h-64 object-cover rounded-xl"
+              />
             </div>
 
             <div className="space-y-8">
