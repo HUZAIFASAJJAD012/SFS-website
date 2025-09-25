@@ -67,7 +67,7 @@ const services = [
 
 const faqs = [
   {
-    question: "What ERP systems does SFS support?",
+    question: "What ERP systems does Standard Financial Services support?",
     answer: "We specialize in Exact Online (with free customer accounts), Twinfield, AFAS, and can integrate with most other ERP systems through custom API solutions."
   },
   {
@@ -158,7 +158,7 @@ export default function ContactPage() {
               variants={fadeInUp}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Let&apos;s discuss how SFS can help your Dutch business with expert bookkeeping and tax advisory services&mdash;wherever you&apos;re located globally.
+              Let&apos;s discuss how Standard Financial Services B.V. (SFS) can help your Dutch business with expert bookkeeping and tax advisory services&mdash;wherever you&apos;re located globally.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -577,7 +577,7 @@ export default function ContactPage() {
               Ready to Get Started?
             </h2>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Join hundreds of international businesses who trust SFS for their Dutch 
+              Join hundreds of international businesses who trust Standard Financial Services B.V. (SFS) for their Dutch 
               bookkeeping and tax advisory needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

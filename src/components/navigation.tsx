@@ -9,7 +9,6 @@ import { useState } from 'react'
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Cases', href: '/cases' },
   { name: 'Team', href: '/team' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -32,7 +31,8 @@ export function Navigation() {
             transition={{ delay: 0.2 }}
           >
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-gray-100">
-              SFS
+              <span className="block">Standard Financial Services</span>
+              <span className="block text-sm font-medium text-gray-600 dark:text-gray-400">(SFS)</span>
             </Link>
           </motion.div>
 

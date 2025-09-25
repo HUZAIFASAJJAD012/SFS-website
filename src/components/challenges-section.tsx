@@ -505,7 +505,7 @@ export function ChallengesSection() {
                   >
                     <CheckCircle className="w-8 h-8 text-green-500 mr-3" />
                   </motion.div>
-                  <span className="text-green-600 dark:text-green-400 font-semibold">SFS Solution</span>
+                  <span className="text-green-600 dark:text-green-400 font-semibold">Standard Financial Services Solution</span>
                 </motion.div>
                 <motion.h3 
                   className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
@@ -530,7 +530,7 @@ export function ChallengesSection() {
                   viewport={{ once: true }}
                 >
                   Don&apos;t let these challenges slow down your international expansion. 
-                  SFS provides comprehensive Dutch bookkeeping and tax advisory services 
+                  Standard Financial Services provides comprehensive Dutch bookkeeping and tax advisory services 
                   that eliminate these pain points from day one.
                 </motion.p>
                 <motion.ul 

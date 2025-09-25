@@ -3,7 +3,7 @@
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import { Calculator, FileText, Database, TrendingUp, Users, Building2, ArrowRight, Check } from 'lucide-react'
+import { Calculator, FileText, Database, TrendingUp, Users, Building2, ArrowRight, Check, User } from 'lucide-react'
 
 // Animation variants
 const fadeInUp = {
@@ -47,7 +47,7 @@ const services = [
     title: 'Tax Advisory & Compliance',
     description: 'Expert tax services covering all aspects of Dutch taxation for businesses and individuals.',
     features: ['Annual tax return preparation', 'VAT return filing (quarterly)', 'Tax planning and optimization', 'Compliance consulting'],
-    price: '€200 - €500/year'
+    price: '€200 - €1000/year'
   },
   {
     icon: Database,
@@ -76,6 +76,13 @@ const services = [
     description: 'Comprehensive support for establishing and maintaining your Dutch business entity.',
     features: ['Company registration (BV/NV)', 'Chamber of Commerce filing', 'Bank account setup assistance', 'Regulatory compliance guidance'],
     price: '€500 - €1,500 one-time'
+  },
+  {
+    icon: User,
+    title: 'Individual Income Tax Return (Netherlands)',
+    description: 'Expert assistance with filing and managing your personal income tax in the Netherlands.',
+    features: ['Annual income tax return preparation', 'Tax deductions & allowances optimization', 'Communication with the Dutch Tax Authority (Belastingdienst)', 'Filing support for residents & non-residents'],
+    price: '€50 - €300/year'
   },
 ]
 
@@ -132,7 +139,7 @@ export default function ServicesPage() {
               variants={fadeInUp}
               className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             >
-              SFS <span className="text-blue-600 dark:text-blue-400">Services</span>
+              Standard Financial Services B.V. (SFS) <span className="text-blue-600 dark:text-blue-400">Services</span>
             </motion.h1>
             
             <motion.p 
@@ -355,12 +362,14 @@ export default function ServicesPage() {
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
               { name: 'Exact Online', subtitle: 'Free customer account included', color: 'from-blue-500 to-blue-600', icon: '🎯' },
-              { name: 'Twinfield', subtitle: 'Professional accounting software', color: 'from-green-500 to-green-600', icon: '💼' },
-              { name: 'AFAS', subtitle: 'Complete business solution', color: 'from-purple-500 to-purple-600', icon: '⚡' },
+              { name: 'Business Central', subtitle: 'Microsoft Dynamics 365', color: 'from-green-500 to-green-600', icon: '💼' },
+              { name: 'NetSuite', subtitle: 'Complete cloud ERP solution', color: 'from-purple-500 to-purple-600', icon: '⚡' },
+              { name: 'Xero', subtitle: 'Beautiful accounting software', color: 'from-indigo-500 to-indigo-600', icon: '💫' },
+              { name: 'Twinfield', subtitle: 'Professional accounting software', color: 'from-teal-500 to-teal-600', icon: '📊' },
               { name: 'Custom APIs', subtitle: 'Tailored integrations', color: 'from-orange-500 to-orange-600', icon: '🔧' }
             ].map((erp) => (
               <motion.div

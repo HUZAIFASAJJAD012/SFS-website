@@ -76,7 +76,7 @@ const caseStudies = [
     ],
     technologies: ["Exact Online", "EU VAT Portal", "Inventory Management"],
     testimonial: {
-      quote: "SFS helped us scale from a small webshop to a professional e-commerce business. Their Exact Online setup was exactly what we needed.",
+      quote: "Standard Financial Services helped us scale from a small webshop to a professional e-commerce business. Their Exact Online setup was exactly what we needed.",
       author: "Lisa van der Berg",
       position: "Founder, DirectSales B.V."
     },
@@ -111,7 +111,7 @@ const caseStudies = [
     ],
     technologies: ["Twinfield", "Chamber of Commerce Portal", "Contract Management"],
     testimonial: {
-      quote: "SFS made my transition from freelancer to BV owner completely seamless. I could focus on my clients while they handled all the administrative work.",
+      quote: "Standard Financial Services made my transition from freelancer to BV owner completely seamless. I could focus on my clients while they handled all the administrative work.",
       author: "Mark Janssen",
       position: "Owner, Creative Studios B.V."
     },
@@ -146,7 +146,7 @@ const caseStudies = [
     ],
     technologies: ["AFAS", "Multi-location Reporting", "Cost Center Management"],
     testimonial: {
-      quote: "SFS gave us complete visibility across all our restaurants. Now we know exactly which location is most profitable and why.",
+      quote: "Standard Financial Services gave us complete visibility across all our restaurants. Now we know exactly which location is most profitable and why.",
       author: "Peter van Dijk",
       position: "Owner, Local Flavors Group"
     },
@@ -181,7 +181,7 @@ const caseStudies = [
     ],
     technologies: ["Exact Online", "Investor Reporting", "Cash Flow Modeling"],
     testimonial: {
-      quote: "SFS's professional approach to our financials was crucial for our Series A success. Investors were impressed with our financial transparency.",
+      quote: "Standard Financial Services's professional approach to our financials was crucial for our Series A success. Investors were impressed with our financial transparency.",
       author: "Emma Bakker",
       position: "CFO, InnovateNL B.V."
     },
@@ -216,7 +216,7 @@ const caseStudies = [
     ],
     technologies: ["Multi-currency ERP", "Customs Integration", "Payment Automation"],
     testimonial: {
-      quote: "SFS understands the complexities of international trade. Their bookkeeping system handles all our multi-currency needs perfectly.",
+      quote: "Standard Financial Services understands the complexities of international trade. Their bookkeeping system handles all our multi-currency needs perfectly.",
       author: "David Hendriks",
       position: "Managing Director, Global Trade Partners B.V."
     },
@@ -251,7 +251,7 @@ const caseStudies = [
     ],
     technologies: ["Project Accounting", "Time Integration", "Automated Billing"],
     testimonial: {
-      quote: "SFS's project accounting system gives us perfect visibility into which clients and projects are most profitable. Game changer for our business.",
+      quote: "Standard Financial Services's project accounting system gives us perfect visibility into which clients and projects are most profitable. Game changer for our business.",
       author: "Sophie de Vries",
       position: "Partner, Consultancy Pro B.V."
     },
@@ -320,13 +320,13 @@ export default function CasesPage() {
               variants={fadeInUp}
               className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             >
-              SFS Success Stories
+              Standard Financial Services Success Stories
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Discover how SFS has helped Dutch businesses achieve financial clarity, compliance, and growth through our expert bookkeeping and tax services
+              Discover how Standard Financial Services B.V. (SFS) has helped Dutch businesses achieve financial clarity, compliance, and growth through our expert bookkeeping and tax services
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -458,7 +458,7 @@ export default function CasesPage() {
               Featured Success Stories
             </motion.h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Discover how SFS has helped businesses achieve remarkable results
+              Discover how Standard Financial Services has helped businesses achieve remarkable results
             </p>
           </motion.div>
 
@@ -715,7 +715,7 @@ export default function CasesPage() {
               Ready to Become Our Next Success Story?
             </h2>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Join the growing list of international businesses who trust SFS for their 
+              Join the growing list of international businesses who trust Standard Financial Services for their 
               Dutch bookkeeping and tax advisory needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

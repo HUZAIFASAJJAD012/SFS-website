@@ -29,94 +29,94 @@ interface TeamMember {
 const teamMembers = [
   {
     id: 1,
-    name: "Sarah van Dijk",
-    position: "Managing Director & Senior Financial Advisor",
-    department: "Leadership",
-    bio: "Sarah leads SFS with over 15 years of experience in Dutch financial services. She specializes in strategic financial planning and business development for international companies operating in the Netherlands.",
-    experience: "15+ years",
-    projects: "200+",
-    specialties: ["Strategic Planning", "Dutch Regulations", "Business Development", "Financial Consulting"],
-    education: "Master of Finance (University of Amsterdam), CFA",
-    location: "Amsterdam, Netherlands",
-    joinDate: "2015",
-    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    name: "Naveed Shah",
+    position: "Senior Financial Accountant",
+    department: "Financial Services",
+    bio: "Naveed brings over 20 years of extensive experience in financial accounting across the EMEA region. He specializes in Dutch financial regulations and international business compliance.",
+    experience: "20+ years",
+    projects: "300+",
+    specialties: ["Financial Accounting", "EMEA Region Expertise", "Dutch Regulations", "International Compliance"],
+    education: "Master of Finance, Professional Accountant",
+    location: "Rotterdam, Netherlands",
+    joinDate: "2020",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
     social: {
       linkedin: "#",
-      email: "sarah@sfs-services.nl"
+      email: "naveed@sfs-services.nl"
     },
     achievements: [
-      "Founded SFS Financial Services",
-      "Expert in Dutch tax and financial regulations", 
-      "Led successful ERP implementations for 100+ companies"
+      "20+ years experience in EMEA region",
+      "Expert in Dutch financial regulations",
+      "Led financial operations for international companies"
     ]
   },
   {
     id: 2,
-    name: "Mark de Boer",
-    position: "Senior Bookkeeper & Compliance Specialist",
-    department: "Bookkeeping",
-    bio: "Mark ensures all bookkeeping services meet Dutch GAAP standards. With extensive experience in ERP integration, he manages financial workflows for medium to large enterprises.",
-    experience: "12+ years",
-    projects: "150+",
-    specialties: ["Dutch GAAP", "Exact Online", "Twinfield", "Financial Reporting"],
-    education: "Bachelor of Accounting (Erasmus University), RA",
-    location: "Rotterdam, Netherlands", 
-    joinDate: "2017",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    name: "Qutaiba Nassar",
+    position: "Senior Financial Accountant",
+    department: "Financial Services",
+    bio: "Qutaiba is a seasoned financial accountant with over 20 years of experience in the EMEA region. Based in Utrecht, he provides expert financial advisory and accounting services.",
+    experience: "20+ years",
+    projects: "250+",
+    specialties: ["Financial Accounting", "EMEA Operations", "Tax Planning", "Financial Consulting"],
+    education: "Master of Accounting, CPA",
+    location: "Utrecht, Netherlands",
+    joinDate: "2020",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
     social: {
       linkedin: "#",
-      email: "mark@sfs-services.nl"
+      email: "qutaiba@sfs-services.nl"
     },
     achievements: [
-      "Streamlined bookkeeping for 150+ clients",
-      "Expert in Exact Online integrations",
-      "Reduced processing time by 60%"
+      "20+ years experience in EMEA region",
+      "Expert in international financial standards",
+      "Streamlined accounting processes for multiple clients"
     ]
   },
   {
     id: 3,
-    name: "Lisa Hendriks",
-    position: "Tax Advisor & Regulatory Specialist", 
-    department: "Tax Advisory",
-    bio: "Lisa provides comprehensive tax advisory services and ensures all clients remain compliant with Dutch tax regulations. She specializes in VAT compliance and corporate taxation.",
+    name: "M Jamshaid",
+    position: "Sales Associate",
+    department: "Sales & Customer Relations",
+    bio: "Jamshaid brings 10+ years of experience in sales and customer compliance. Based in Rotterdam, he ensures exceptional client service and maintains strong customer relationships.",
     experience: "10+ years",
-    projects: "300+",
-    specialties: ["Dutch Tax Law", "VAT Compliance", "Corporate Tax", "Regulatory Compliance"],
-    education: "Master of Tax Law (Leiden University), Belastingadviseur",
-    location: "The Hague, Netherlands",
-    joinDate: "2018",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    projects: "200+",
+    specialties: ["Sales Management", "Customer Compliance", "Client Relations", "Business Development"],
+    education: "Bachelor of Business Administration",
+    location: "Rotterdam, Netherlands",
+    joinDate: "2021",
+    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
     social: {
       linkedin: "#",
-      email: "lisa@sfs-services.nl"
+      email: "jamshaid@sfs-services.nl"
     },
     achievements: [
-      "Zero compliance violations in 6 years",
-      "Saved clients €500K+ in tax optimization",
-      "Expert in Dutch VAT regulations"
+      "10+ years in sales and customer compliance",
+      "Built strong client relationships",
+      "Expert in customer service excellence"
     ]
   },
   {
     id: 4,
-    name: "David Janssen",
-    position: "ERP Integration Specialist",
-    department: "Technology",
-    bio: "David leads our ERP integration team, specializing in connecting financial systems with popular ERP platforms. He ensures seamless data flow and automated reporting.",
-    experience: "8+ years",
-    projects: "100+",
-    specialties: ["ERP Integration", "AFAS", "API Development", "Data Migration"],
-    education: "Master of Computer Science (TU Delft)",
-    location: "Utrecht, Netherlands",
-    joinDate: "2019",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    name: "Position Available",
+    position: "Join Our Team",
+    department: "Open Position",
+    bio: "We're always looking for talented professionals to join our growing team at Standard Financial Services B.V. If you have experience in financial services and want to make a difference, we'd love to hear from you.",
+    experience: "Open",
+    projects: "Future",
+    specialties: ["Open Position", "Growth Opportunity", "Professional Development", "Team Collaboration"],
+    education: "Various backgrounds welcome",
+    location: "Netherlands",
+    joinDate: "Future",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=400&fit=crop&crop=center&auto=format&q=80",
     social: {
       linkedin: "#",
-      email: "david@sfs-services.nl"
+      email: "careers@sfs-services.nl"
     },
     achievements: [
-      "Successfully integrated 100+ ERP systems",
-      "Developed custom API solutions",
-      "Expert in AFAS and Twinfield platforms"
+      "Opportunity for growth",
+      "Join our professional team",
+      "Make an impact in financial services"
     ]
   }
 ]

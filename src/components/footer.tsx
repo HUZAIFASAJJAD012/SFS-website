@@ -15,7 +15,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">SFS Financial Services</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Standard Financial Services B.V.</h3>
             <p className="text-gray-600 dark:text-gray-400">
               Your trusted partner for comprehensive financial services in the Netherlands. 
               Specialized in bookkeeping, tax advisory, and ERP integration solutions.
@@ -107,7 +107,7 @@ export function Footer() {
           className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center"
         >
           <p className="text-gray-600 dark:text-gray-400">
-            © 2025 SFS Financial Services. All rights reserved.
+            © 2025 Standard Financial Services B.V. (SFS). All rights reserved.
           </p>
         </motion.div>
       </div>

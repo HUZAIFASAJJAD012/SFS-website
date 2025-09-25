@@ -14,7 +14,7 @@ const features = [
   {
     icon: Globe,
     title: "ERP Integration",
-    description: "Seamless integration with popular ERP systems like Exact Online, Twinfield, and AFAS",
+    description: "Seamless integration with popular ERP systems like Exact Online, Business Central/Microsoft Dynamics 365, NetSuite, and Xero",
     color: "blue"
   },
   {
@@ -32,9 +32,9 @@ const features = [
 ]
 
 const stats = [
-  { number: "200+", label: "Active Clients", icon: Users },
+  { number: "50+", label: "Active Clients", icon: Users },
   { number: "99.8%", label: "Compliance Rate", icon: CheckCircle },
-  { number: "50+", label: "ERP Integrations", icon: Shield },
+  { number: "5+", label: "ERP Integrations", icon: Shield },
   { number: "10+", label: "Years Experience", icon: TrendingUp }
 ]
 
@@ -140,7 +140,7 @@ export function AboutSection() {
           >
             About{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              SFS
+              Standard Financial Services B.V.
             </span>
           </motion.h2>
           <motion.p
@@ -150,7 +150,7 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            SFS Financial Services is your trusted partner for comprehensive financial solutions in the Netherlands. 
+            Standard Financial Services B.V. is your trusted partner for comprehensive financial solutions in the Netherlands. 
             We specialize in bookkeeping, tax advisory, ERP integrations, and business consulting services, 
             helping businesses navigate Dutch regulations and achieve sustainable growth.
           </motion.p>
@@ -246,7 +246,7 @@ export function AboutSection() {
               className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 p-6 rounded-2xl border border-blue-200 dark:border-blue-800"
             >
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">
-                &ldquo;At SFS, we combine deep expertise in Dutch financial regulations with cutting-edge technology 
+                &ldquo;At Standard Financial Services, we combine deep expertise in Dutch financial regulations with cutting-edge technology 
                 to deliver seamless, accurate, and compliant solutions. Our commitment to excellence ensures 
                 your business can focus on growth while we handle the complexities of financial management.&rdquo;
               </p>

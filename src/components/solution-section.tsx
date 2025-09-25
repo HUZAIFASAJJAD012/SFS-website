@@ -14,17 +14,12 @@ const offices = [
   {
     type: "Subsidiary", 
     color: "green",
-    roles: ["Local Accountant", "Billing", "HR & Payroll", "Marketing", "Legal", "Compliance"],
+    roles: ["Local Accountant", "Billing", "HR & Payroll", "Local Presence", "Legal", "Compliance"],
     description: "Local back office support in full compliance"
   }
 ]
 
-const benefits = [
-  "Market validation",
-  "Sales",
-  "Recruitment", 
-  "Delivery"
-]
+
 
 export function SolutionSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -41,7 +36,6 @@ export function SolutionSection() {
 
   // Memoize static data
   const officesData = useMemo(() => offices, [])
-  const benefitsData = useMemo(() => benefits, [])
 
   return (
     <section ref={sectionRef} className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 dark:from-gray-900 dark:via-blue-950 dark:to-green-950">
@@ -215,21 +209,7 @@ export function SolutionSection() {
             </div>
 
             {/* Simplified Benefits List */}
-            <div className="space-y-3">
-              {benefitsData.map((benefit, index) => (
-                <motion.div
-                  key={benefit}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center justify-center text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-200/50 dark:border-gray-700/50"
-                >
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
-                  <span className="font-medium">{benefit}</span>
-                </motion.div>
-              ))}
-            </div>
+          
           </motion.div>
 
           {/* Simplified Subsidiary */}

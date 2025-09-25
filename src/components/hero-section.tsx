@@ -59,7 +59,7 @@ export function HeroSection() {
 
   const features = useMemo(() => [
     { icon: Shield, label: "Tax Compliance", color: "emerald" },
-    { icon: Globe, label: "ERP Integration", color: "blue" },
+    { icon: Globe, label: "Bookkeeping", color: "blue" },
     { icon: TrendingUp, label: "Business Growth", color: "purple" },
   ], [])
   return (
@@ -155,17 +155,18 @@ export function HeroSection() {
             ease: "easeOut"
           }}
         >
-          {/* SFS Title */}
+          {/* Standard Financial Services Title */}
           <motion.h1
-            className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8 leading-tight"
+            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <span className="block">SFS</span>
+            <span className="block text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-2">Standard</span>
             <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">
-              Financial Services
+              Financial Services B.V.
             </span>
+            <span className="block text-base sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-600 dark:text-gray-400 mt-2">(SFS)</span>
           </motion.h1>
 
           {/* SFS Mission & Vision */}
