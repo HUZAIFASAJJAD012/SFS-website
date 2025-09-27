@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { 
-  Phone, Mail, MapPin, Clock, Calendar, Send, MessageSquare, 
+  Phone, Mail, MapPin, Clock, Send, MessageSquare, 
   Globe, Users, FileText, Calculator, Database,
   Video, Shield, ArrowRight
 } from 'lucide-react'
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     question: "How quickly can you start?",
-    answer: "Most bookkeeping and tax services can begin within 1-2 weeks. ERP integrations typically take 2-4 weeks depending on complexity. We'll provide a detailed timeline during consultation."
+    answer: "Most bookkeeping and tax services can begin within 1-2 weeks. ERP integrations typically take 2-4 weeks depending on complexity. We&apos;ll provide a detailed timeline during consultation."
   }
 ]
 
@@ -417,7 +417,7 @@ export default function ContactPage() {
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                     <p className="text-green-600 dark:text-green-400 text-sm">
-                      Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                      Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
                 )}

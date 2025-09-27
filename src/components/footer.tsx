@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter, Youtube } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter } from 'lucide-react'
 import { SiTiktok, SiFiverr } from 'react-icons/si'
 import Link from 'next/link'
 

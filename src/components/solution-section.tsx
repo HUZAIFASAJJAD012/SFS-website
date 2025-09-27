@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
-import { Building2, Globe, CheckCircle, ArrowRight, Zap, Target } from 'lucide-react'
+import { Building2, Globe, ArrowRight, Zap, Target } from 'lucide-react'
 import { useRef, useMemo } from 'react'
 
 const offices = [

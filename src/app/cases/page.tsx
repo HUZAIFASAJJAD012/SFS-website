@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
@@ -528,9 +529,11 @@ export default function CasesPage() {
                   <div className="space-y-6">
                     {/* Case Study Image */}
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-                      <img 
+                      <Image 
                         src={caseStudy.image} 
                         alt={caseStudy.title}
+                        width={400}
+                        height={192}
                         className="w-full h-48 object-cover rounded-lg mb-4"
                       />
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
@@ -776,9 +779,11 @@ export default function CasesPage() {
 
             {/* Case Study Image */}
             <div className="mb-8">
-              <img 
+              <Image 
                 src={selectedCase.image} 
                 alt={selectedCase.title}
+                width={800}
+                height={256}
                 className="w-full h-64 object-cover rounded-xl"
               />
             </div>
