@@ -26,24 +26,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: [
-      {
-        url: "/logos copy.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/logos copy.png",
-        sizes: "16x16",
-        type: "image/png",
-      }
-    ],
-    apple: {
-      url: "/logos copy.png",
-      sizes: "180x180",
-      type: "image/png",
-    },
-    shortcut: "/logos copy.png",
+    icon: "/logos%20copy.png",
+    shortcut: "/logos%20copy.png",
+    apple: "/logos%20copy.png",
   },
 };
 
