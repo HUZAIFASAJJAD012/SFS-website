@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter, Youtube } from 'lucide-react'
+import { SiTiktok, SiFiverr } from 'react-icons/si'
 import Link from 'next/link'
 
 export function Footer() {
@@ -17,25 +18,47 @@ export function Footer() {
           >
             <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Standard Financial Services B.V.</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Your trusted partner for comprehensive financial services in the Netherlands. 
-              Specialized in bookkeeping, tax advisory, and ERP integration solutions.
+              Your trusted partner for comprehensive financial services in the Netherlands.<br />
+              <a href="https://www.sfsbv.com" className="underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">www.sfsbv.com</a>
+              <br />Specialized in bookkeeping, tax advisory, and ERP integration solutions.
             </p>
             {/* Social Media Links */}
             <div className="flex space-x-4 pt-2">
-              <a href="https://www.instagram.com/sfs_services" 
-                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              {/* Instagram */}
+              <a href="https://www.instagram.com/sfsbv2024" 
+                 className="text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
                  target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/company/sfs-services" 
-                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                 target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://www.facebook.com/sfsservices" 
+              {/* Facebook */}
+              <a href="https://www.facebook.com/profile.php?id=61568880334106" 
                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                  target="_blank" rel="noopener noreferrer">
                 <Facebook className="w-5 h-5" />
+              </a>
+              {/* TikTok */}
+              <a href="https://www.tiktok.com/@standardfinancials" 
+                 className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                 target="_blank" rel="noopener noreferrer">
+                <SiTiktok className="w-5 h-5" />
+              </a>
+              {/* Twitter */}
+              <a href="https://twitter.com/sfsbv5" 
+                 className="text-gray-600 dark:text-gray-400 hover:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                 target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-5 h-5" />
+              </a>
+              {/* Fiverr */}
+              <a href="https://www.fiverr.com/sfsbv5" 
+                 className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+                 target="_blank" rel="noopener noreferrer">
+                <SiFiverr className="w-5 h-5" />
+              </a>
+              {/* Linkedin (kept) */}
+              <a href="https://www.linkedin.com/company/sfs-services" 
+                 className="text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                 target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
@@ -82,19 +105,23 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                <span className="text-gray-600 dark:text-gray-400">info@sfs-services.nl</span>
+                <span className="text-gray-600 dark:text-gray-400">info@sfsbv.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                <span className="text-gray-600 dark:text-gray-400">+31 85 130 0937</span>
+                <span className="text-gray-600 dark:text-gray-400">+31 6 27855065</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-gray-600 dark:text-gray-400 mt-0.5" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  Weteringschans 165-C<br />
-                  1017 XD Amsterdam<br />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Marten+Meesweg+25+G,+3068+AV"
+                  className="text-gray-600 dark:text-gray-400 underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  Marten Meesweg 25 G<br />
+                  3068 AV<br />
                   Netherlands
-                </span>
+                </a>
               </div>
             </div>
           </motion.div>

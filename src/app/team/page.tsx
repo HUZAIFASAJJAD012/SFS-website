@@ -39,7 +39,7 @@ const teamMembers = [
     education: "Master of Finance, Professional Accountant",
     location: "Rotterdam, Netherlands",
     joinDate: "2020",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    image: "/WhatsApp Image 2025-09-26 at 00.39.19 (2).jpeg",
     social: {
       linkedin: "#",
       email: "naveed@sfs-services.nl"
@@ -62,7 +62,7 @@ const teamMembers = [
     education: "Master of Accounting, CPA",
     location: "Utrecht, Netherlands",
     joinDate: "2020",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    image: "/WhatsApp Image 2025-09-26 at 00.39.19 (3).jpeg",
     social: {
       linkedin: "#",
       email: "qutaiba@sfs-services.nl"

@@ -4,6 +4,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
 import { Calculator, FileText, Database, TrendingUp, Users, Building2, ArrowRight, Check, User } from 'lucide-react'
+import Link from 'next/link'
 
 // Animation variants
 const fadeInUp = {
@@ -19,7 +20,7 @@ const fadeInScale = {
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.08
     }
   }
 }
@@ -154,28 +155,27 @@ export default function ServicesPage() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Get Free Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
-              >
+              <Link href="/contact" passHref legacyBehavior>
+                <motion.a
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </motion.a>
+              </Link>
+              <a href="#our-professional-services" className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
                 View Pricing
-              </motion.button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Enhanced Services Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors relative">
+      <section id="our-professional-services" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors relative">
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -186,66 +186,33 @@ export default function ServicesPage() {
         </div>
         
         <div className="container mx-auto px-4 relative">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="text-center mb-16"
-          >
-            <motion.h2 
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6"
-            >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Our Professional Services
-            </motion.h2>
-            <motion.p 
-              variants={fadeInUp}
-              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-            >
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Tailored financial solutions designed to help your business thrive in the Dutch market
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
           
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-              <motion.div
+              <div
                 key={service.title}
-                variants={fadeInScale}
-                whileHover={{ 
-                  y: -10, 
-                  scale: 1.02,
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
-                }}
-                className="group bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                className="group bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden hover:scale-102"
               >
                 {/* Card Background Effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Icon with Animation */}
-                <motion.div 
-                  className="relative w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl flex items-center justify-center mb-6"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="relative w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl flex items-center justify-center mb-6">
                   <service.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                </motion.div>
+                </div>
                 
                 <div className="relative">
-                  <motion.h3 
-                    className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                    whileHover={{ x: 5 }}
-                  >
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {service.title}
-                  </motion.h3>
+                  </h3>
                   
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
                     {service.description}
@@ -254,46 +221,32 @@ export default function ServicesPage() {
                   {/* Enhanced Features */}
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <motion.li 
+                      <li 
                         key={idx} 
                         className="flex items-start text-sm text-gray-600 dark:text-gray-300"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
                       >
-                        <motion.div
-                          className="w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0"
-                          whileHover={{ scale: 1.2 }}
-                        >
+                        <div className="w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                           <Check className="w-3 h-3 text-green-600 dark:text-green-400" />
-                        </motion.div>
+                        </div>
                         {feature}
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                   
                   {/* Enhanced Pricing */}
                   <div className="mt-auto">
-                    <motion.div 
-                      className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4"
-                      whileHover={{ scale: 1.05 }}
-                    >
+                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
                       {service.price}
-                    </motion.div>
-                    <motion.button 
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center group"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
+                    </div>
+                    <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center group">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </motion.button>
+                    </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -329,7 +282,7 @@ export default function ServicesPage() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1, margin: "-50px" }}
             variants={staggerContainer}
             className="text-center mb-16"
           >
@@ -360,7 +313,7 @@ export default function ServicesPage() {
           <motion.div 
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
@@ -433,32 +386,12 @@ export default function ServicesPage() {
                   initial={{ y: 10 }}
                   whileHover={{ y: 0 }}
                 >
-                  <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400 mx-auto" />
                 </motion.div>
               </motion.div>
             ))}
           </motion.div>
           
-          {/* Call to Action */}
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-            className="text-center mt-16"
-          >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 15px 35px rgba(59, 130, 246, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg"
-            >
-              Schedule ERP Consultation
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </motion.button>
-          </motion.div>
+          
         </div>
       </section>
 

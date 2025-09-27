@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { 
   Store, TrendingUp, FileText, Users, Globe, 
   AlertTriangle, Languages, Building2,
@@ -588,58 +589,60 @@ export function ChallengesSection() {
                 }}
                 viewport={{ once: true }}
               >
-                <motion.button
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ 
-                    scale: 1, 
-                    opacity: 1,
-                    transition: { 
-                      duration: 0.6, 
-                      delay: 1.2,
-                      type: "spring",
-                      stiffness: 200
-                    }
-                  }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
-                    transition: { duration: 0.3 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  animate={{
-                    y: [0, -5, 0],
-                    transition: {
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
-                  }}
-                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg relative overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ 
-                      x: "100%",
-                      transition: { duration: 0.6 }
+                <Link href="/contact" passHref legacyBehavior>
+                  <motion.a
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      transition: { 
+                        duration: 0.6, 
+                        delay: 1.2,
+                        type: "spring",
+                        stiffness: 200
+                      }
                     }}
-                  />
-                  <span className="relative z-10">Get Expert Help Today</span>
-                  <motion.div
+                    viewport={{ once: true }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
+                      transition: { duration: 0.3 }
+                    }}
+                    whileTap={{ scale: 0.95 }}
                     animate={{
-                      x: [0, 5, 0],
+                      y: [0, -5, 0],
                       transition: {
-                        duration: 1.5,
+                        duration: 3,
                         repeat: Infinity,
                         ease: "easeInOut"
                       }
                     }}
-                    className="relative z-10"
+                    className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg relative overflow-hidden"
                   >
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </motion.div>
-                </motion.button>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ 
+                        x: "100%",
+                        transition: { duration: 0.6 }
+                      }}
+                    />
+                    <span className="relative z-10">Get Expert Help Today</span>
+                    <motion.div
+                      animate={{
+                        x: [0, 5, 0],
+                        transition: {
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                      className="relative z-10"
+                    >
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </motion.div>
+                  </motion.a>
+                </Link>
                 <motion.p 
                   className="text-sm text-gray-500 dark:text-gray-400 mt-3"
                   initial={{ opacity: 0 }}

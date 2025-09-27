@@ -9,6 +9,8 @@ import {
   Video, Shield, ArrowRight
 } from 'lucide-react'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { emailjsConfig } from '@/config/emailjs'
 
 const contactMethods = [
   {
@@ -23,7 +25,7 @@ const contactMethods = [
     icon: Mail,
     title: "Email Contact",
     description: "Get detailed responses within 24 hours",
-    contact: "info@sfs-services.nl",
+    contact: "info@sfsbv.com",
     availability: "24/7 Response",
     badge: "Professional"
   },
@@ -48,9 +50,9 @@ const contactMethods = [
 const offices = [
   {
     city: "Amsterdam",
-    address: "Weteringschans 165-C, 1017 XD Amsterdam, Netherlands",
-    phone: "+31 85 130 0937",
-    email: "info@sfs-services.nl",
+    address: "Marten Meesweg 25 G, 3068 AV, Netherlands",
+    phone: "+31 6 27855065",
+    email: "info@sfsbv.com",
     hours: "Mon-Fri: 9:00-17:00 CET",
     isMain: true
   }
@@ -94,6 +96,8 @@ export default function ContactPage() {
     message: ''
   })
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -102,10 +106,42 @@ export default function ContactPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // EmailJS configuration
+      const { serviceId, templateId, publicKey } = emailjsConfig
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        to_email: 'info@sfsbv.com'
+      }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
+      setSubmitStatus('success')
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+        message: ''
+      })
+    } catch (error) {
+      console.error('Email send error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Animation variants
@@ -355,13 +391,44 @@ export default function ContactPage() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className={`w-full py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-200 cursor-not-allowed' 
+                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                  }`}
                 >
-                  Send Message
-                  <Send className="w-5 h-5 ml-2" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5 ml-2" />
+                    </>
+                  )}
                 </motion.button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                    <p className="text-green-600 dark:text-green-400 text-sm">
+                      Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                    <p className="text-red-600 dark:text-red-400 text-sm">
+                      Sorry, there was an error sending your message. Please try again or contact us directly at info@sfsbv.com
+                    </p>
+                  </div>
+                )}
               </form>
             </motion.div>
 
@@ -564,43 +631,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Join hundreds of international businesses who trust Standard Financial Services B.V. (SFS) for their Dutch 
-              bookkeeping and tax advisory needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-              >
-                Schedule Free Consultation
-                <Calendar className="w-5 h-5 ml-2" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Call Now: +31 20 123 4567
-                <Phone className="w-5 h-5 ml-2" />
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       <Footer />
     </div>

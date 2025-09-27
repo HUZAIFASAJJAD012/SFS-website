@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { CheckCircle, Globe, Users, Award, TrendingUp, Shield } from 'lucide-react'
+import Link from 'next/link'
 import { useRef } from 'react'
 
 const features = [
@@ -262,43 +263,43 @@ export function AboutSection() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05,
-                  y: -8,
-                  transition: { duration: 0.2 }
-                }}
-                whileTap={{ scale: 0.98 }}
-                className="group bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 cursor-pointer"
-              >
-                <motion.div 
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(feature.color)} group-hover:scale-110 transition-transform duration-300`}
-                  whileHover={{ rotate: 5 }}
+              <Link href="/services" passHref legacyBehavior key={feature.title}>
+                <motion.a
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -8,
+                    transition: { duration: 0.2 }
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 cursor-pointer block"
                 >
-                  <feature.icon className="w-7 h-7" />
-                </motion.div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-                
-                {/* Hover effect indicator */}
-                <motion.div
-                  className="mt-4 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                />
-              </motion.div>
+                  <motion.div 
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(feature.color)} group-hover:scale-110 transition-transform duration-300`}
+                    whileHover={{ rotate: 5 }}
+                  >
+                    <feature.icon className="w-7 h-7" />
+                  </motion.div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                  {/* Hover effect indicator */}
+                  <motion.div
+                    className="mt-4 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  />
+                </motion.a>
+              </Link>
             ))}
           </motion.div>
         </div>

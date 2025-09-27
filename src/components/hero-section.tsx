@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion'
 import { ArrowRight, Play, Sparkles, TrendingUp, Shield, Globe } from 'lucide-react'
 import { useRef, useEffect, useState, useMemo } from 'react'
+import Link from 'next/link'
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -221,30 +222,34 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center space-x-3 transition-all duration-300 shadow-xl"
-            >
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span>Start Your Partnership</span>
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </motion.button>
+            <Link href="/contact" passHref legacyBehavior>
+              <motion.a
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center space-x-3 transition-all duration-300 shadow-xl"
+              >
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+                <span>Start Your Partnership</span>
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </motion.a>
+            </Link>
 
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center space-x-3 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 backdrop-blur-sm bg-white/10 dark:bg-gray-800/10"
-            >
-              <Play className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span>Our Services</span>
-            </motion.button>
+            <Link href="/services" passHref legacyBehavior>
+              <motion.a
+                whileHover={{ 
+                  scale: 1.05,
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center space-x-3 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 backdrop-blur-sm bg-white/10 dark:bg-gray-800/10"
+              >
+                <Play className="w-5 h-5 sm:w-6 sm:h-6" />
+                <span>Our Services</span>
+              </motion.a>
+            </Link>
           </motion.div>
         </motion.div>
 
