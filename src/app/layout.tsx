@@ -14,8 +14,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Business Website",
-  description: "A modern business website with animations and theme switching",
+  title: "Standard Financial Services B.V. (SFS) - Professional Financial Solutions",
+  description: "Expert financial services in the Netherlands - Bookkeeping, Tax Advisory, ERP Integration, and Business Consulting for Dutch businesses. Professional, reliable, and tailored solutions.",
+  keywords: "financial services, bookkeeping, tax advisory, ERP integration, Dutch business, Netherlands accounting, Standard Financial Services, SFS",
+  authors: [{ name: "Standard Financial Services B.V." }],
+  creator: "Standard Financial Services B.V.",
+  publisher: "Standard Financial Services B.V.",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      {
+        url: "/logos copy.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/logos copy.png",
+        sizes: "16x16",
+        type: "image/png",
+      }
+    ],
+    apple: {
+      url: "/logos copy.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
+    shortcut: "/logos copy.png",
+  },
 };
 
 export default function RootLayout({
