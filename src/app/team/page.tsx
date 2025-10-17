@@ -52,6 +52,29 @@ const teamMembers = [
   },
   {
     id: 2,
+    name: "Youas Ewketu",
+    position: "Financial Consultant",
+    department: "Financial Services",
+    bio: "Youas is an experienced financial consultant who brings expertise in business advisory and financial planning. He helps clients navigate complex financial decisions and optimize their business operations.",
+    experience: "8+ years",
+    projects: "150+",
+    specialties: ["Financial Consulting", "Business Advisory", "Financial Planning", "Risk Management"],
+    education: "Master of Finance, CFA",
+    location: "Amsterdam, Netherlands",
+    joinDate: "2022",
+    image: "/WhatsApp Image 2025-10-08 at 00.12.13.jpeg",
+    social: {
+      linkedin: "#",
+      email: "youas@sfs-services.nl"
+    },
+    achievements: [
+      "8+ years in financial consulting",
+      "Expert in business advisory services",
+      "Specialized in financial risk management"
+    ]
+  },
+  {
+    id: 3,
     name: "Qutaiba Nassar",
     position: "Senior Financial Accountant",
     department: "Financial Services",
@@ -74,7 +97,7 @@ const teamMembers = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     name: "M Jamshaid",
     position: "Sales Associate",
     department: "Sales & Customer Relations",
@@ -94,29 +117,6 @@ const teamMembers = [
       "10+ years in sales and customer compliance",
       "Built strong client relationships",
       "Expert in customer service excellence"
-    ]
-  },
-  {
-    id: 4,
-    name: "Youas Ewketu",
-    position: "Financial Consultant",
-    department: "Financial Services",
-    bio: "Youas is an experienced financial consultant who brings expertise in business advisory and financial planning. He helps clients navigate complex financial decisions and optimize their business operations.",
-    experience: "8+ years",
-    projects: "150+",
-    specialties: ["Financial Consulting", "Business Advisory", "Financial Planning", "Risk Management"],
-    education: "Master of Finance, CFA",
-    location: "Amsterdam, Netherlands",
-    joinDate: "2022",
-    image: "/WhatsApp Image 2025-10-08 at 00.12.13.jpeg",
-    social: {
-      linkedin: "#",
-      email: "youas@sfs-services.nl"
-    },
-    achievements: [
-      "8+ years in financial consulting",
-      "Expert in business advisory services",
-      "Specialized in financial risk management"
     ]
   }
 ]
@@ -366,13 +366,13 @@ export default function TeamPage() {
                   rotateY: 5,
                   boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
                 }}
-                className="group cursor-pointer perspective-1000"
+                className="group cursor-pointer perspective-1000 rounded-3xl"
                 onClick={() => setSelectedMember(member)}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Gallery-Style Card */}
                 <motion.div 
-                  className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                  className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl h-full flex flex-col"
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Profile Image with Gradient Overlay */}
@@ -441,7 +441,7 @@ export default function TeamPage() {
                   </div>
 
                   {/* Profile Content */}
-                  <div className="p-6 relative">
+                  <div className="p-6 relative flex-1 flex flex-col justify-between">
                     {/* Name and Position */}
                     <motion.h3 
                       className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
