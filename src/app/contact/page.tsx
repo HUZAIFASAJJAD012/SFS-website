@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer'
 import { 
   Phone, Mail, MapPin, Clock, Send, MessageSquare, 
   Globe, Users, FileText, Calculator, Database,
-  Video, Shield, ArrowRight
+  Shield, ArrowRight
 } from 'lucide-react'
 import { useState } from 'react'
 import { toast } from "react-hot-toast"
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
       // Clear form
       setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' })
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("❌ EmailJS Error:", error)
       toast.error("Failed to send message. Please try again later.")
     } finally {
@@ -449,7 +449,7 @@ export default function ContactPage() {
                       <p>✉️ Email: <a href="mailto:info@sfsbv.com" className="underline hover:text-amber-600 font-medium">info@sfsbv.com</a></p>
                       <p>📱 WhatsApp: <a href="https://wa.me/31627855065" className="underline hover:text-amber-600 font-medium">+31 6 27855065</a></p>
                       <p>📞 Phone: <a href="tel:+31627855065" className="underline hover:text-amber-600 font-medium">+31 6 27855065</a></p>
-                      <p className="text-xs mt-2 text-amber-600 dark:text-amber-400">We'll respond within 24 hours!</p>
+                      <p className="text-xs mt-2 text-amber-600 dark:text-amber-400">We&apos;ll respond within 24 hours!</p>
                     </div>
                   </div>
                 )}

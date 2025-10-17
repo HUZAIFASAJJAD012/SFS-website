@@ -1,13 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-
-// Initialize Resend with API key (you'll need to get this from resend.com)
-const resend = new Resend(process.env.RESEND_API_KEY || 'your-resend-api-key-here')
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, company, phone, service, message, timestamp } = body
+    const { name, email, company, phone, service, message } = body
 
     console.log('📧 Processing contact form submission:', {
       name,
@@ -15,11 +11,12 @@ export async function POST(request: NextRequest) {
       company,
       phone,
       service,
+      message,
       timestamp: new Date().toISOString()
     })
 
-    // Create the email content
-    const emailHtml = `
+    // Create the email content (commented out since email sending is disabled)
+    /* const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
         
         <!-- Header -->
@@ -108,6 +105,7 @@ export async function POST(request: NextRequest) {
 
       </div>
     `
+    */
 
     // For now, we'll simulate sending the email
     // To actually send emails, you need to:
