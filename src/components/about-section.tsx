@@ -263,8 +263,8 @@ export function AboutSection() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {features.map((feature, index) => (
-              <Link href="/services" passHref legacyBehavior key={feature.title}>
-                <motion.a
+              <Link href="/services" key={feature.title}>
+                <motion.div
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ 
@@ -298,7 +298,7 @@ export function AboutSection() {
                   <motion.div
                     className="mt-4 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                   />
-                </motion.a>
+                </motion.div>
               </Link>
             ))}
           </motion.div>

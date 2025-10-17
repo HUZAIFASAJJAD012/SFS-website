@@ -54,7 +54,7 @@ const services = [
     icon: Database,
     title: 'ERP Integration & Support',
     description: 'Seamless integration with popular ERP systems to streamline your financial operations.',
-    features: ['Exact Online (free customer account)', 'Twinfield integration', 'AFAS system support', 'Custom API connections'],
+    features: ['Exact Online (free customer account)', 'Quickbooks integration', 'AFAS system support', 'Custom API connections'],
     price: '€100 - €250/month'
   },
   {
@@ -84,6 +84,13 @@ const services = [
     description: 'Expert assistance with filing and managing your personal income tax in the Netherlands.',
     features: ['Annual income tax return preparation', 'Tax deductions & allowances optimization', 'Communication with the Dutch Tax Authority (Belastingdienst)', 'Filing support for residents & non-residents'],
     price: '€50 - €300/year'
+  },
+  {
+    icon: User,
+    title: 'Freelancer Tax Services (Netherlands)',
+    description: 'Expert assistance with managing and filing your freelance taxes in the Netherlands.',
+    features: ['Quarterly & annual income tax return preparation', 'VAT (BTW) filing & invoicing compliance', 'Optimization of business expenses & deductions', 'Communication with the Dutch Tax Authority (Belastingdienst)', 'Support for ZZP\'ers (self-employed) & part-time freelancers'],
+    price: '€75 - €450/year'
   },
 ]
 
@@ -155,15 +162,15 @@ export default function ServicesPage() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link href="/contact" passHref legacyBehavior>
-                <motion.a
+              <Link href="/contact">
+                <motion.div
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer"
                 >
                   Get Free Consultation
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </motion.a>
+                </motion.div>
               </Link>
               <a href="#our-professional-services" className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
                 View Pricing
@@ -322,7 +329,7 @@ export default function ServicesPage() {
               { name: 'Business Central', subtitle: 'Microsoft Dynamics 365', color: 'from-green-500 to-green-600', icon: '💼' },
               { name: 'NetSuite', subtitle: 'Complete cloud ERP solution', color: 'from-purple-500 to-purple-600', icon: '⚡' },
               { name: 'Xero', subtitle: 'Beautiful accounting software', color: 'from-indigo-500 to-indigo-600', icon: '💫' },
-              { name: 'Twinfield', subtitle: 'Professional accounting software', color: 'from-teal-500 to-teal-600', icon: '📊' },
+              { name: 'Quickbooks', subtitle: 'Professional accounting software', color: 'from-teal-500 to-teal-600', icon: '📊' },
               { name: 'Custom APIs', subtitle: 'Tailored integrations', color: 'from-orange-500 to-orange-600', icon: '🔧' }
             ].map((erp) => (
               <motion.div

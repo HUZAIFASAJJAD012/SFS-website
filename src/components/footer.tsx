@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter } from 'lucide-react'
-import { SiTiktok, SiFiverr } from 'react-icons/si'
+import { SiTiktok } from 'react-icons/si'
 import Link from 'next/link'
 
 export function Footer() {
@@ -48,14 +48,8 @@ export function Footer() {
                  target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-5 h-5" />
               </a>
-              {/* Fiverr */}
-              <a href="https://www.fiverr.com/sfsbv5" 
-                 className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
-                 target="_blank" rel="noopener noreferrer">
-                <SiFiverr className="w-5 h-5" />
-              </a>
               {/* Linkedin (kept) */}
-              <a href="https://www.linkedin.com/company/sfs-services" 
+              <a href="https://www.linkedin.com/company/standard-finnancial-services-bv/?viewAsMember=true" 
                  className="text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                  target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5" />
@@ -73,7 +67,6 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Home</Link></li>
               <li><Link href="/services" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Services</Link></li>
-              <li><Link href="/cases" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Cases</Link></li>
               <li><Link href="/team" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Team</Link></li>
               <li><Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Contact</Link></li>
             </ul>
@@ -118,9 +111,10 @@ export function Footer() {
                   className="text-gray-600 dark:text-gray-400 underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   target="_blank" rel="noopener noreferrer"
                 >
+                  
                   Marten Meesweg 25 G<br />
-                  3068 AV<br />
-                  Netherlands
+                  3068AV , Alexandrium,<br />
+                  Rotterdam. The Netherlands
                 </a>
               </div>
             </div>

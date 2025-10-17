@@ -2,10 +2,11 @@
 // You need to replace these values with your actual EmailJS credentials
 // Sign up at https://www.emailjs.com/ to get your credentials
 
+// EmailJS Configuration using environment variables
 export const emailjsConfig = {
-  serviceId: 'your_service_id', // Replace with your EmailJS service ID
-  templateId: 'your_template_id', // Replace with your EmailJS template ID
-  publicKey: 'your_public_key' // Replace with your EmailJS public key
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_w45jced',
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_73a6w5c',
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '4rfLEJvas-uG2uode'
 }
 
 // Instructions to set up EmailJS:

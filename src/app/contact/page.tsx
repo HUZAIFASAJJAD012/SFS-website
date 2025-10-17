@@ -9,6 +9,7 @@ import {
   Video, Shield, ArrowRight
 } from 'lucide-react'
 import { useState } from 'react'
+import { toast } from "react-hot-toast"
 import emailjs from '@emailjs/browser'
 import { emailjsConfig } from '@/config/emailjs'
 
@@ -17,7 +18,7 @@ const contactMethods = [
     icon: Phone,
     title: "Phone Support",
     description: "Direct line to our financial experts",
-    contact: "+31 85 130 0937",
+    contact: "+31 6 27855065",
     availability: "Mon-Fri 9:00-17:00 CET",
     badge: "Direct Support"
   },
@@ -30,18 +31,18 @@ const contactMethods = [
     badge: "Professional"
   },
   {
-    icon: Video,
+    icon: Mail,
     title: "Video Consultation",
-    description: "Schedule a personalized meeting",
-    contact: "Book Online",
+    description: "Book directly through Google Calendar",
+    contact: "Click to schedule",
     availability: "Available Worldwide",
-    badge: "Face-to-Face"
+    badge: "Google Calendar"
   },
   {
     icon: MessageSquare,
     title: "WhatsApp Business",
     description: "Quick communication via WhatsApp",
-    contact: "+31 6 12345678",
+    contact: "+31 6 27855065",
     availability: "Mon-Fri 9:00-17:00 CET",
     badge: "Quick Response"
   }
@@ -61,7 +62,7 @@ const offices = [
 const services = [
   { icon: Calculator, title: "Bookkeeping Services", popular: true },
   { icon: FileText, title: "Tax Advisory & Compliance", popular: true },
-  { icon: Database, title: "ERP Integration (Exact Online, Twinfield, AFAS)", popular: true },
+  { icon: Database, title: "ERP Integration (Exact Online, Quickbooks, AFAS)", popular: true },
   { icon: Users, title: "Financial Consulting", popular: false },
   { icon: Globe, title: "Payroll Management", popular: false },
   { icon: Shield, title: "Business Setup Services", popular: false }
@@ -70,7 +71,7 @@ const services = [
 const faqs = [
   {
     question: "What ERP systems does Standard Financial Services support?",
-    answer: "We specialize in Exact Online (with free customer accounts), Twinfield, AFAS, and can integrate with most other ERP systems through custom API solutions."
+    answer: "We specialize in Exact Online (with free customer accounts), Xero, Microsoft Dynamics 365, NetSuite , and can integrate with most other ERP systems through custom API solutions."
   },
   {
     question: "How much do your services cost?",
@@ -109,36 +110,36 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setSubmitStatus('idle')
 
     try {
-      // EmailJS configuration
-      const { serviceId, templateId, publicKey } = emailjsConfig
+      console.log('📧 Sending email via EmailJS...')
 
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        company: formData.company,
-        phone: formData.phone,
-        service: formData.service,
+        company: formData.company || 'Not provided',
+        phone: formData.phone || 'Not provided',
+        service: formData.service || 'Not selected',
         message: formData.message,
         to_email: 'info@sfsbv.com'
       }
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
-      
+      const result = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams,
+        emailjsConfig.publicKey
+      )
+
+      console.log('✅ Email sent:', result.text)
+      toast.success('Message sent successfully!')
       setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
-      })
-    } catch (error) {
-      console.error('Email send error:', error)
-      setSubmitStatus('error')
+
+      // Clear form
+      setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' })
+    } catch (error: any) {
+      console.error("❌ EmailJS Error:", error)
+      toast.error("Failed to send message. Please try again later.")
     } finally {
       setIsSubmitting(false)
     }
@@ -248,6 +249,20 @@ export default function ContactPage() {
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center relative group cursor-pointer"
+                onClick={() => {
+                  if (method.title === "Video Consultation") {
+                    // Cal.com booking link for Huzaifa Sajjad meeting
+                    const calBookingUrl = "https://cal.com/huzaifa-sajjad-spmmno/meeting"
+                    window.open(calBookingUrl, '_blank')
+                  } else if (method.title === "Phone Support") {
+                    window.open(`tel:${method.contact}`, '_self')
+                  } else if (method.title === "Email Contact") {
+                    window.open(`mailto:${method.contact}`, '_self')
+                  } else if (method.title === "WhatsApp Business") {
+                    const phoneNumber = method.contact.replace(/\s+/g, '').replace('+', '')
+                    window.open(`https://wa.me/${phoneNumber}`, '_blank')
+                  }
+                }}
               >
                 <div className="absolute top-4 right-4">
                   <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-xs rounded-full">
@@ -423,10 +438,19 @@ export default function ContactPage() {
                 )}
 
                 {submitStatus === 'error' && (
-                  <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                    <p className="text-red-600 dark:text-red-400 text-sm">
-                      Sorry, there was an error sending your message. Please try again or contact us directly at info@sfsbv.com
+                  <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <p className="text-amber-800 dark:text-amber-200 font-medium mb-2">
+                      📧 Having trouble with the form? No problem!
                     </p>
+                    <p className="text-amber-700 dark:text-amber-300 text-sm mb-3">
+                      Please contact us directly using any of these methods:
+                    </p>
+                    <div className="text-amber-700 dark:text-amber-300 text-sm space-y-1">
+                      <p>✉️ Email: <a href="mailto:info@sfsbv.com" className="underline hover:text-amber-600 font-medium">info@sfsbv.com</a></p>
+                      <p>📱 WhatsApp: <a href="https://wa.me/31627855065" className="underline hover:text-amber-600 font-medium">+31 6 27855065</a></p>
+                      <p>📞 Phone: <a href="tel:+31627855065" className="underline hover:text-amber-600 font-medium">+31 6 27855065</a></p>
+                      <p className="text-xs mt-2 text-amber-600 dark:text-amber-400">We'll respond within 24 hours!</p>
+                    </div>
                   </div>
                 )}
               </form>

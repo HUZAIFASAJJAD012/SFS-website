@@ -85,7 +85,7 @@ const teamMembers = [
     education: "Bachelor of Business Administration",
     location: "Rotterdam, Netherlands",
     joinDate: "2021",
-    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    image: "/WhatsApp Image 2025-10-08 at 00.12.14.jpeg",
     social: {
       linkedin: "#",
       email: "jamshaid@sfs-services.nl"
@@ -98,25 +98,25 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Position Available",
-    position: "Join Our Team",
-    department: "Open Position",
-    bio: "We're always looking for talented professionals to join our growing team at Standard Financial Services B.V. If you have experience in financial services and want to make a difference, we'd love to hear from you.",
-    experience: "Open",
-    projects: "Future",
-    specialties: ["Open Position", "Growth Opportunity", "Professional Development", "Team Collaboration"],
-    education: "Various backgrounds welcome",
-    location: "Netherlands",
-    joinDate: "Future",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=400&fit=crop&crop=center&auto=format&q=80",
+    name: "Youas Ewketu",
+    position: "Financial Consultant",
+    department: "Financial Services",
+    bio: "Youas is an experienced financial consultant who brings expertise in business advisory and financial planning. He helps clients navigate complex financial decisions and optimize their business operations.",
+    experience: "8+ years",
+    projects: "150+",
+    specialties: ["Financial Consulting", "Business Advisory", "Financial Planning", "Risk Management"],
+    education: "Master of Finance, CFA",
+    location: "Amsterdam, Netherlands",
+    joinDate: "2022",
+    image: "/WhatsApp Image 2025-10-08 at 00.12.13.jpeg",
     social: {
       linkedin: "#",
-      email: "careers@sfs-services.nl"
+      email: "youas@sfs-services.nl"
     },
     achievements: [
-      "Opportunity for growth",
-      "Join our professional team",
-      "Make an impact in financial services"
+      "8+ years in financial consulting",
+      "Expert in business advisory services",
+      "Specialized in financial risk management"
     ]
   }
 ]

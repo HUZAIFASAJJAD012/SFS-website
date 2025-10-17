@@ -589,8 +589,8 @@ export function ChallengesSection() {
                 }}
                 viewport={{ once: true }}
               >
-                <Link href="/contact" passHref legacyBehavior>
-                  <motion.a
+                <Link href="/contact">
+                  <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     whileInView={{ 
                       scale: 1, 
@@ -617,7 +617,7 @@ export function ChallengesSection() {
                         ease: "easeInOut"
                       }
                     }}
-                    className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg relative overflow-hidden"
+                    className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg relative overflow-hidden cursor-pointer"
                   >
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600"
@@ -641,7 +641,7 @@ export function ChallengesSection() {
                     >
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </motion.div>
-                  </motion.a>
+                  </motion.div>
                 </Link>
                 <motion.p 
                   className="text-sm text-gray-500 dark:text-gray-400 mt-3"
